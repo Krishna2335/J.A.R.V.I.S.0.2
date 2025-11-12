@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JARVIS Assistant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="/static/jarvis.png" class="jarvis-img" alt="Jarvis Image">
+    <h1 class="title">J A R V I S</h1>
+    <p class="subtitle">I'm a Virtual Assistant JARVIS, How may I help you?</p>
+    <button class="mic-btn" onclick="startJarvis()">🎤 Click here to speak</button>
+  </div>
+
+  <script>
+    async function startJarvis() {
+      const btn = document.querySelector(".mic-btn");
+      btn.innerText = "🎧 Listening...";
+      await fetch("/start");
+      btn.innerText = "🎤 Jarvis is running...";
+    }
+  </script>
+</body>
+</html>
